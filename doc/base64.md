@@ -1,12 +1,20 @@
 ## Base64
+```
+package yfunc
+```
+
 
 #### 方法
 
 
-1. 编码
-> AnyEncode(v interface{}) string
+- 编码
+```
+AnyEncode(v interface{}) string
+```
 
 
-2. 解码
-> AnyDecode(s string,v interface{}) error
+- 解码
+```
+AnyDecode(s string,v interface{}) error
+```
 

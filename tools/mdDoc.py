@@ -48,12 +48,13 @@ def get_func_arr(fileList):
                     next = lines[index + 1].strip()
                     funcDict["func"] = next[5:-1]
                     funcArr.append(funcDict)
-                    get_content(Titile,funcArr)
+                    package = lines[0].strip()
+                    get_content(Titile,package,funcArr)
 
     pass
 
-def get_content(title,funcArr):
-    content = template.render(Title=title, funcArr=funcArr)
+def get_content(title,package,funcArr):
+    content = template.render(Title=title,package=package, funcArr=funcArr)
     create(title.lower() + ".md",content)
     pass
 
