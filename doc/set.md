@@ -31,7 +31,7 @@ NewSetTypeLimit(t string) *Set
 ```
 
 
-- 添加Set中的一个（或多个）元素
+- 添加一个（或多个）元素
 ```
 (this *Set) Add(v ...interface{})  
 ```

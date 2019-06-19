@@ -55,7 +55,7 @@ func (this *Set) Size() int{
 	return len(this.m)
 }
 
-// @添加Set中的一个（或多个）元素
+// @添加一个（或多个）元素
 func (this *Set) Add(v ...interface{})  {
 	length := len(v)
 	for i := 0; i < length ; i++ {
