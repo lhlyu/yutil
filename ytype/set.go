@@ -37,7 +37,7 @@ func NewSet() *Set{
 	}
 }
 
-// @新建一个Set并且限制Set的值类型
+// @新建一个Set并且限制Set的值类型(例:int string bool...)
 func NewSetTypeLimit(t string) *Set{
 	return &Set{
 		m: make(map[interface{}]struct{}),
