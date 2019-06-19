@@ -30,14 +30,14 @@ type Seter interface {
 	Print()                                            // 打印
 }
 
-
+// @新建一个Set
 func NewSet() *Set{
 	return &Set{
 		m: make(map[interface{}]struct{}),
 	}
 }
 
-// 限制Set的值类型
+// @新建一个Set并且限制Set的值类型
 func NewSetTypeLimit(t string) *Set{
 	return &Set{
 		m: make(map[interface{}]struct{}),
@@ -45,15 +45,17 @@ func NewSetTypeLimit(t string) *Set{
 	}
 }
 
-
+// @清空Set中所有的元素
 func (this *Set) Clear(){
 	this.m = make(map[interface{}]struct{})
 }
 
+// @获取一个Set的长度
 func (this *Set) Size() int{
 	return len(this.m)
 }
 
+// @添加Set中的一个（或多个）元素
 func (this *Set) Add(v ...interface{})  {
 	length := len(v)
 	for i := 0; i < length ; i++ {
@@ -64,6 +66,7 @@ func (this *Set) Add(v ...interface{})  {
 	}
 }
 
+// @删除Set中的一个（或多个）元素
 func (this *Set) Del(v ...interface{}) {
 	length := len(v)
 	for i := 0; i < length ; i++ {
@@ -73,6 +76,7 @@ func (this *Set) Del(v ...interface{}) {
 	}
 }
 
+// @判断一个元素是否在Set中
 func (this *Set) Exist(key interface{}) bool {
 	if _,ok := this.m[key];ok{
 		return true
@@ -80,6 +84,7 @@ func (this *Set) Exist(key interface{}) bool {
 	return false
 }
 
+// @判断两个Set是否相等，相等返回true
 func (this *Set) Equals(set *Set) bool {
 	if this.Size() != set.Size(){
 		return false
@@ -92,6 +97,7 @@ func (this *Set) Equals(set *Set) bool {
 	return true
 }
 
+// @判断set是否为空，空为true
 func (this *Set) Empty() bool {
 	if this.Size() == 0{
 		return true
@@ -99,7 +105,7 @@ func (this *Set) Empty() bool {
 	return false
 }
 
-
+// @并集  返回一个新的Set
 func (this *Set) Union(set *Set) *Set {
 	nSet := NewSetTypeLimit(this.tp)
 	if this.Empty() || set.Empty(){
@@ -117,7 +123,7 @@ func (this *Set) Union(set *Set) *Set {
 	return nSet
 }
 
-// 交集
+// @交集  返回一个新的Set
 func (this *Set) Intersection(set *Set) *Set {
 	nSet := NewSetTypeLimit(this.tp)
 	if this.Empty() || set.Empty(){
@@ -134,7 +140,7 @@ func (this *Set) Intersection(set *Set) *Set {
 	return nSet
 }
 
-// 差集 this - set
+// @差集(前者减去后者)  返回一个新的Set
 func (this *Set) Difference(set *Set) *Set {
 	nSet := NewSetTypeLimit(this.tp)
 	if this.Empty() || set.Empty(){
@@ -151,7 +157,7 @@ func (this *Set) Difference(set *Set) *Set {
 	return nSet
 }
 
-
+// @set 转 数组
 func (this *Set) ToArray() []interface{}{
 	if this.Empty(){
 		return nil
@@ -163,6 +169,7 @@ func (this *Set) ToArray() []interface{}{
 	return arr
 }
 
+// @打印set
 func (this *Set) Print(){
 	fmt.Println(this.ToArray())
 }

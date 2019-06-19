@@ -7,6 +7,7 @@ import (
 	"github.com/lhlyu/logger"
 )
 
+// @编码
 func AnyEncode(v interface{}) string{
 	if v == nil{
 		logger.Error("AnyEncode","v is nil")
@@ -20,6 +21,7 @@ func AnyEncode(v interface{}) string{
 	return base64.StdEncoding.EncodeToString(byts)
 }
 
+// @解码
 func AnyDecode(s string,v interface{}) error{
 	if v == nil{
 		logger.Error("AnyDecode","v is nil")
