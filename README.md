@@ -17,3 +17,4 @@ go get github.com/lhlyu/yutil
 1. [Base64](./doc/base64.md)
 2. [Md5](./doc/md5.md)
 3. [Random](./doc/random.md)
+4. [Yio](./doc/yio.md)
