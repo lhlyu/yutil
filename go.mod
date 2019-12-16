@@ -1,3 +1,6 @@
 module yutil
 
-require github.com/lhlyu/logger v1.0.7
+require (
+	fyne.io/fyne v1.1.0 // indirect
+	github.com/lhlyu/logger v1.2.1
+)
