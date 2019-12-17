@@ -6,15 +6,6 @@ golang 工具包
 
 `go get -v github.com/lhlyu/yutil`
 
-#### TODO
-
-- String
-- SQL 
-- Random
-- 加密
-- 文件
-- 时间
-
 #### 工具包全局设置
 
 ```go
@@ -53,5 +44,7 @@ const (
 3. 随机
 4. 文件[+]
 5. 时间
+6. SQL
+7. 字符串
 ```
 
