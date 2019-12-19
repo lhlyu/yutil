@@ -69,6 +69,18 @@ func (s *SqlBuffer) AddWhrBatch(format string, v ...[]interface{}) *SqlBuffer {
 	return s
 }
 
+// 去除两侧的逗号
+func (s *SqlBuffer) TrimComma() *SqlBuffer {
+	if s.buf.Len() > 0 {
+		str := s.buf.String()
+		str = strings.TrimSpace(str)
+		str = strings.Trim(str, ",")
+		s.buf.Reset()
+		s.buf.WriteString(str)
+	}
+	return s
+}
+
 func (s *SqlBuffer) Reset() *SqlBuffer {
 	s.buf.Reset()
 	s.ps = make([]interface{}, 0)
