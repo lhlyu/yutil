@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const _version = "v1.0.3"
+const _version = "v1.0.4"
 
 const logTmplate = "[%v] yutil.%s.%s:%s\n"
 
@@ -30,7 +30,7 @@ func (c *conf) log(fileName, funcName string, err error) {
 		return
 	}
 	if err != nil {
-		log.Printf(logTmplate, time.Now().Format("2006-01-02 15:04:05"), fileName, funcName, err.Error())
+		log.Printf(logTmplate, time.Now().Format(DEFAULT_TIME_FORMAT), fileName, funcName, err.Error())
 	}
 }
 
