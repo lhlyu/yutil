@@ -67,3 +67,11 @@ const (
 1. time[- v1.0.1]
 2. runtime
 ```
+
+- [v1.0.5](./changelogs/v1.0.5.md)
+
+```text
+1. file[+]
+2. 加密[+]
+3. version
+``` 
