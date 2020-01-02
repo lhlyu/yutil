@@ -30,8 +30,8 @@ func TestVersion(t *testing.T) {
 		{"v1.0", "v0.0.1.0", 1},
 		{"v1.0", "v0.5.0.1", 1},
 		{"v32.0.1", "v0.5.0.1", 1},
-		{"v1.0.1", "v1.1", 1},
-		{"edfef", "dfe", 1},
+		{"v1.0.1", "v1.1", -1},
+		{"edfef", "dfe", -2},
 	}
 	for k, v := range checks {
 		c, e := CompareVersion(v.A, v.B)
