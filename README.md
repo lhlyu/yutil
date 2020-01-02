@@ -32,6 +32,7 @@ const (
 1. file[+]
 2. 加密[+]
 3. version
+4. 随机
 ```
 
 - [v1.0.4](./changelogs/v1.0.4.md) 

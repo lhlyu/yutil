@@ -42,3 +42,19 @@ func RandString(length int) string {
 	}
 	return string(bts)
 }
+
+// 自定义随机字符串
+func RandCustomString(length int, s string) string {
+	if length <= 0 {
+		return ""
+	}
+	bs := []byte(s)
+	bsLength := len(bs)
+	rand.Seed(time.Now().UnixNano())
+	var bts []byte
+	for i := 0; i < length; i++ {
+		time.Sleep(1)
+		bts = append(bts, bs[rand.Intn(bsLength)])
+	}
+	return string(bts)
+}
