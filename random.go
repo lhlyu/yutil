@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// 生成区间的随机数(如果min参数大于max参数，这两个参数的值会对调)
+// v1.0.1: 生成区间的随机数(如果min参数大于max参数，这两个参数的值会对调)
 func RandInterval(min, max int) int {
 	if max < min {
 		min, max = max, min
@@ -19,7 +19,7 @@ func RandInterval(min, max int) int {
 	return x
 }
 
-// 随机一个数 1 << 63 -1
+// v1.0.1:  随机一个数 1 << 63 -1
 func RandNumber() int {
 	time.Sleep(1)
 	rand.Seed(time.Now().UnixNano())
@@ -27,7 +27,7 @@ func RandNumber() int {
 	return x
 }
 
-// 随机指定长度的字符串，(范围包含: 大小写数字下划线)
+// v1.0.1: 随机指定长度的字符串，(范围包含: 大小写数字下划线)
 func RandString(length int) string {
 	if length <= 0 {
 		return ""
@@ -43,7 +43,7 @@ func RandString(length int) string {
 	return string(bts)
 }
 
-// 自定义随机字符串
+// v1.0.5: 自定义随机字符串
 func RandCustomString(length int, s string) string {
 	if length <= 0 {
 		return ""

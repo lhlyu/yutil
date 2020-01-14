@@ -11,7 +11,7 @@ const (
 	OS_UNKNOWN = "unknown"
 )
 
-// 获取系统类型
+// v1.0.4: 获取系统类型
 func GetOSName() string {
 	switch runtime.GOOS {
 	case OS_MAC:
@@ -25,7 +25,7 @@ func GetOSName() string {
 	}
 }
 
-// 获取调用栈上的函数信息(函数名、文件名、调用行数)
+// v1.0.4: 获取调用栈上的函数信息(函数名、文件名、调用行数)
 func CurrentFuncInfo(skip int) (funcName string, fileName string, line int) {
 	pc, file, line, ok := runtime.Caller(skip)
 	f := runtime.FuncForPC(pc)

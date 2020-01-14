@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 )
 
-// md5加密
+// v1.0.1: md5加密
 func Md5(data string) string {
 	hash := md5.New()
 	_, err := hash.Write([]byte(data))
@@ -15,7 +15,7 @@ func Md5(data string) string {
 	return hex.EncodeToString(cipherStr)
 }
 
-// md5 加密附带盐值
+// v1.0.1: md5 加密附带盐值
 func Md5WithSalt(data, salt string) string {
 	hash := md5.New()
 	_, err := hash.Write([]byte(data + salt))
@@ -24,7 +24,7 @@ func Md5WithSalt(data, salt string) string {
 	return hex.EncodeToString(cipherStr)
 }
 
-// sha1 加密
+// v1.0.5: sha1 加密
 func SHA1(data string) string {
 	hash := sha1.New()
 	hash.Write([]byte(data))
@@ -32,7 +32,7 @@ func SHA1(data string) string {
 	return hex.EncodeToString(cipherStr)
 }
 
-// sha1 加密附带盐值
+// v1.0.5: sha1 加密附带盐值
 func SHA1WithSalt(data, salt string) string {
 	hash := sha1.New()
 	hash.Write([]byte(data + salt))

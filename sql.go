@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// v1.0.1: sql构建
 type SqlBuffer struct {
 	buf bytes.Buffer
 	ps  []interface{}

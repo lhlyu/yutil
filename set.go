@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// v1.0.3: Set
 type Set struct {
 	m  map[interface{}]struct{}
 	tp string // 限制类型，默认不限制

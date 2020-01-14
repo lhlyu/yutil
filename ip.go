@@ -11,7 +11,7 @@ const (
 	_XForwardedFor = "X-Forwarded-For"
 )
 
-// 获取客户端Ip
+// v1.0.0: 获取客户端Ip
 func ClientIp(req *http.Request) string {
 	var err error
 	remoteAddr := req.RemoteAddr
@@ -25,11 +25,11 @@ func ClientIp(req *http.Request) string {
 	if remoteAddr == "::1" {
 		remoteAddr = "127.0.0.1"
 	}
-	_conf.log("ip","ClientIp",err)
+	_conf.log("ip", "ClientIp", err)
 	return remoteAddr
 }
 
-// 将Ip转成uint32
+// v1.0.0: 将Ip转成uint32
 func IpTolong(ipstr string) uint32 {
 	ip := net.ParseIP(ipstr)
 	if ip == nil {

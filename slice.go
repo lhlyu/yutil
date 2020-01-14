@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-// 将字符串切片转成int切片
+// v1.0.0: 将字符串切片转成int切片
 func SliceStrToInt(ss []string) []int {
 	var slice []int
 	for _, v := range ss {
@@ -18,7 +18,7 @@ func SliceStrToInt(ss []string) []int {
 	return slice
 }
 
-// 将int切片转成字符串切片
+// v1.0.0: 将int切片转成字符串切片
 func SliceIntToStr(vv []int) []string {
 	var slice []string
 	for _, v := range vv {
@@ -28,7 +28,7 @@ func SliceIntToStr(vv []int) []string {
 	return slice
 }
 
-// 过滤字符串切片,如果 f 方法返回true 则过滤当前元素
+// v1.0.0: 过滤字符串切片,如果 f 方法返回true 则过滤当前元素
 func SliceStrFilter(ss []string, f func(s string) bool) {
 	var slice []string
 	for _, s := range ss {
@@ -38,7 +38,7 @@ func SliceStrFilter(ss []string, f func(s string) bool) {
 	}
 }
 
-// 过滤int切片,如果 f 方法返回true 则过滤当前元素
+// v1.0.0: 过滤int切片,如果 f 方法返回true 则过滤当前元素
 func SliceIntFilter(vv []int, f func(v int) bool) {
 	var slice []int
 	for _, v := range vv {

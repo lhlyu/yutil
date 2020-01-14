@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// 判断文件是否存在
+// v1.0.0: 判断文件是否存在
 func FileIsExists(filePath string) bool {
 	_, err := os.Stat(filePath)
 	if err == nil {
@@ -20,7 +20,7 @@ func FileIsExists(filePath string) bool {
 	return false
 }
 
-// 一次性读取文件所有内容
+// v1.0.1: 一次性读取文件所有内容
 func FileReadAll(filePath string) string {
 	fi, err := os.Open(filePath)
 	if err != nil {
@@ -36,7 +36,7 @@ func FileReadAll(filePath string) string {
 	return string(fd)
 }
 
-// 按行读取
+// v1.0.1: 按行读取
 func FileReadLines(filePath string) []string {
 	var lines []string
 	fi, err := os.Open(filePath)
@@ -56,7 +56,7 @@ func FileReadLines(filePath string) []string {
 	return lines
 }
 
-// 逐行读取文件内容，去除空行和首尾空格
+// v1.0.1: 逐行读取文件内容，去除空行和首尾空格
 func FileReadLinesTrim(filePath string) []string {
 	var lines []string
 	fi, err := os.Open(filePath)
@@ -81,7 +81,7 @@ func FileReadLinesTrim(filePath string) []string {
 	return lines
 }
 
-// 自定义处理每一行
+// v1.0.5: 自定义处理每一行
 func FileReadLine(filePath string, f func(line string)) {
 	fi, err := os.Open(filePath)
 	if err != nil {

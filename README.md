@@ -25,6 +25,11 @@ const (
 
 #### 更新日志
 
+- [v1.0.6](./changelogs/v1.0.6.md)
+
+```text
+1. regexp
+```
 
 - [v1.0.5](./changelogs/v1.0.5.md)
 
@@ -32,7 +37,7 @@ const (
 1. file[+]
 2. 加密[+]
 3. version
-4. 随机
+4. 随机[+]
 ```
 
 - [v1.0.4](./changelogs/v1.0.4.md) 
