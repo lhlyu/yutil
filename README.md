@@ -25,6 +25,13 @@ const (
 
 #### 更新日志
 
+- [v1.0.7](./changelogs/v1.0.7.md)
+
+```text
+1. slice
+2. regexp 
+```
+
 - [v1.0.6](./changelogs/v1.0.6.md)
 
 ```text

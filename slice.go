@@ -1,7 +1,10 @@
 package yutil
 
 import (
+	"math/rand"
+	"reflect"
 	"strconv"
+	"time"
 )
 
 // v1.0.0: 将字符串切片转成int切片
@@ -45,5 +48,22 @@ func SliceIntFilter(vv []int, f func(v int) bool) {
 		if !f(v) {
 			slice = append(slice, v)
 		}
+	}
+}
+
+// v1.0.7: 切片洗牌
+func SliceShuffle(v interface{}){
+	val := reflect.ValueOf(v)
+	if val.Kind() == reflect.Ptr{
+		val = val.Elem()
+	}
+	if val.Kind() != reflect.Slice{
+		return
+	}
+	length := val.Len()
+	rand.Seed(time.Now().UnixNano())
+	for i := length - 1; i > 0;i --{
+		j := rand.Intn(length)
+		reflect.Swapper(v)(i,j)
 	}
 }

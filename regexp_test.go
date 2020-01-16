@@ -18,3 +18,9 @@ func TestRegexpReplaceAll(t *testing.T) {
 	s = RegexpReplaceAll(s, "\\d+|g", "_")
 	fmt.Println(s)
 }
+
+func TestRegexpFindAll(t *testing.T) {
+	s := "s2s2s3d4gfd54g"
+	ss := RegexpFindAll(s, "\\d+")
+	fmt.Println(ss)
+}
