@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const _version = "v1.0.7"
+const _version = "v1.0.8"
 
 const logTmplate = "[%v] yutil.%s.%s:%s\n"
 

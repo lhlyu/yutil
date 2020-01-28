@@ -25,6 +25,12 @@ const (
 
 #### 更新日志
 
+- v1.0.8
+
+```text
+修复bug
+```
+
 - [v1.0.7](./changelogs/v1.0.7.md)
 
 ```text

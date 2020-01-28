@@ -82,10 +82,12 @@ func FileReadLinesTrim(filePath string) []string {
 }
 
 // v1.0.5: 自定义处理每一行
+// v1.0.8: 修复bug
 func FileReadLine(filePath string, f func(line string)) {
 	fi, err := os.Open(filePath)
 	if err != nil {
 		_conf.log("file", "FileReadLine", err)
+		return
 	}
 	defer fi.Close()
 	br := bufio.NewReader(fi)
