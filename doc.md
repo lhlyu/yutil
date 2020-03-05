@@ -44,11 +44,11 @@
 
 - [v2.0.0] 将对象转成json字符串
 
-`yutil.Json.Encode(v interface{}) string`
+`yutil.Json.Marshal(v interface{}) string`
 
 - [v2.0.0] 将字符串反序列化为对象
 
-`yutil.Json.Decode(s string,v interface{})`
+`yutil.Json.Unmarshal(s string,v interface{})`
 
 
 ##### Regexp
