@@ -7,9 +7,9 @@ import (
 
 var versionErr = errors.New("does not support comparison")
 
-// v1.0.5: 比较两个版本号: v1 > v2 => 1; v1 == v2 => 0; v1 < v2 => -1
+// 比较两个版本号: v1 > v2 => 1; v1 == v2 => 0; v1 < v2 => -1
 // 版本号示例: v1.0 v0.01 v1.0.0.0.1 v0.0.1 ...
-func CompareVersion(v1, v2 string) (int, error) {
+func (yOther) CompareVersion(v1, v2 string) (int, error) {
 	dot := false
 	var first []byte
 	for _, v := range []byte(v1) {

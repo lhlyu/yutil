@@ -2,90 +2,32 @@
 
 golang 工具包
 
+#### 当前版本
+
+`v2.0.0`
+
+- 注: 不兼容v1
+
 #### 使用
 
-`go get -v github.com/lhlyu/yutil`
+`go get -v github.com/lhlyu/yutil/v2`
 
-#### 工具包全局设置
+#### 文档
 
-```go
-// 是否不忽略错误,调用将会打印错误
-func NotIgnore()
-```
+[链接](./doc.md)
 
-#### 常量定义
 
-```go
-const (
-	DEFAULT_DATE_FORMAT = "2006-01-02"
-	DEFAULT_TIME_FORMAT = "2006-01-02 15:04:05"
-	ALPHA = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-)
-```
-
-#### 更新日志
-
-- [v1.0.7](./changelogs/v1.0.7.md)
+#### 错误处理
 
 ```text
-1. slice
-2. regexp 
+默认情况是不会打印错误信息,如果需要打印，调用下面这个方法:
+
+yutil.NotIgnore()
+
+错误将打印在控制台
+
+自定义错误处理
+
+yutil.SetHandler(f func(fileName, funcName string, err error))
+
 ```
-
-- [v1.0.6](./changelogs/v1.0.6.md)
-
-```text
-1. regexp
-```
-
-- [v1.0.5](./changelogs/v1.0.5.md)
-
-```text
-1. file[+]
-2. 加密[+]
-3. version
-4. 随机[+]
-```
-
-- [v1.0.4](./changelogs/v1.0.4.md) 
-
-```text
-1. time[- v1.0.1]
-2. runtime
-```
-
-- [v1.0.3](./changelogs/v1.0.3.md) 
-
-```text
-1. Set
-```
-
-- [v1.0.2](./changelogs/v1.0.2.md) 
-
-```text
-1. SQL[+]
-2. 字符串[+]
-```
- 
- - [v1.0.1](./changelogs/v1.0.1.md) 
- 
- ```text
- 1. 常量定义
- 2. 加密
- 3. 随机
- 4. 文件[+]
- 5. 时间
- 6. SQL
- 7. 字符串
- ```
- 
- - [v1.0.0](./changelogs/v1.0.0.md) 
- 
- ```text
- 1. base64   
- 2. ip       
- 3. json     
- 4. 文件     
- 5. 切片      
- 6. 类型转换
- ```

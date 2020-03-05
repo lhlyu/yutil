@@ -34,7 +34,7 @@ func TestVersion(t *testing.T) {
 		{"edfef", "dfe", -2},
 	}
 	for k, v := range checks {
-		c, e := CompareVersion(v.A, v.B)
+		c, e := Other.CompareVersion(v.A, v.B)
 		if e != nil {
 			t.Log(e.Error())
 			continue

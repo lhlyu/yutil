@@ -11,8 +11,8 @@ const (
 	_XForwardedFor = "X-Forwarded-For"
 )
 
-// v1.0.0: 获取客户端Ip
-func ClientIp(req *http.Request) string {
+// 获取客户端Ip
+func (yIp) ClientIp(req *http.Request) string {
 	var err error
 	remoteAddr := req.RemoteAddr
 	if ip := req.Header.Get(_XRealIP); ip != "" {
@@ -25,12 +25,12 @@ func ClientIp(req *http.Request) string {
 	if remoteAddr == "::1" {
 		remoteAddr = "127.0.0.1"
 	}
-	_conf.log("ip", "ClientIp", err)
+	_arc.log("ip", "ClientIp", err)
 	return remoteAddr
 }
 
-// v1.0.0: 将Ip转成uint32
-func IpTolong(ipstr string) uint32 {
+// 将Ip转成uint32
+func (yIp) Tolong(ipstr string) uint32 {
 	ip := net.ParseIP(ipstr)
 	if ip == nil {
 		return 0

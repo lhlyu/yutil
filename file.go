@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-// v1.0.0: 判断文件是否存在
-func FileIsExists(filePath string) bool {
+// 判断文件是否存在
+func (yFile) IsExists(filePath string) bool {
 	_, err := os.Stat(filePath)
 	if err == nil {
 		return true
@@ -20,28 +20,28 @@ func FileIsExists(filePath string) bool {
 	return false
 }
 
-// v1.0.1: 一次性读取文件所有内容
-func FileReadAll(filePath string) string {
+// 一次性读取文件所有内容
+func (yFile) ReadAll(filePath string) string {
 	fi, err := os.Open(filePath)
 	if err != nil {
-		_conf.log("file", "FileReadAll", err)
+		_arc.log("File", "ReadAll", err)
 		return ""
 	}
 	defer fi.Close()
 	fd, err := ioutil.ReadAll(fi)
 	if err != nil {
-		_conf.log("file", "FileReadAll", err)
+		_arc.log("File", "ReadAll", err)
 		return ""
 	}
 	return string(fd)
 }
 
-// v1.0.1: 按行读取
-func FileReadLines(filePath string) []string {
+// 按行读取
+func (yFile) ReadLines(filePath string) []string {
 	var lines []string
 	fi, err := os.Open(filePath)
 	if err != nil {
-		_conf.log("file", "FileReadLines", err)
+		_arc.log("File", "ReadLines", err)
 		return lines
 	}
 	defer fi.Close()
@@ -56,12 +56,12 @@ func FileReadLines(filePath string) []string {
 	return lines
 }
 
-// v1.0.1: 逐行读取文件内容，去除空行和首尾空格
-func FileReadLinesTrim(filePath string) []string {
+// 逐行读取文件内容，去除空行和首尾空格
+func (yFile) ReadLinesTrim(filePath string) []string {
 	var lines []string
 	fi, err := os.Open(filePath)
 	if err != nil {
-		_conf.log("file", "FileReadLinesTrim", err)
+		_arc.log("File", "ReadLinesTrim", err)
 		return lines
 	}
 	defer fi.Close()
@@ -81,11 +81,11 @@ func FileReadLinesTrim(filePath string) []string {
 	return lines
 }
 
-// v1.0.5: 自定义处理每一行
-func FileReadLine(filePath string, f func(line string)) {
+// 自定义处理每一行
+func (yFile) ReadLine(filePath string, f func(line string)) {
 	fi, err := os.Open(filePath)
 	if err != nil {
-		_conf.log("file", "FileReadLine", err)
+		_arc.log("File", "ReadLine", err)
 	}
 	defer fi.Close()
 	br := bufio.NewReader(fi)

@@ -6,8 +6,8 @@ import (
 	"strconv"
 )
 
-// v1.0.0: 将任意切片转成[]interface{}
-func ConvertToInterface(slice interface{}) []interface{} {
+// 将任意切片转成[]interface{}
+func (yConvert) ToSlinceInterface(slice interface{}) []interface{} {
 	val := reflect.ValueOf(slice)
 	if val.Kind() != reflect.Slice {
 		return nil
@@ -23,32 +23,8 @@ func ConvertToInterface(slice interface{}) []interface{} {
 	return params
 }
 
-// v1.0.0: 将字符串切片转成[]interface{}
-func ConvertStrToInterface(slice []string) []interface{} {
-	if len(slice) == 0 {
-		return nil
-	}
-	params := make([]interface{}, len(slice))
-	for i, v := range slice {
-		params[i] = v
-	}
-	return params
-}
-
-// v1.0.0: 将整形切片转成[]interface{}
-func ConvertIntToInterface(slice []int) []interface{} {
-	if len(slice) == 0 {
-		return nil
-	}
-	params := make([]interface{}, len(slice))
-	for i, v := range slice {
-		params[i] = v
-	}
-	return params
-}
-
-// v1.0.0: 将任意类型转string
-func ConvertAnyToStr(v interface{}) string {
+// 将任意类型转string
+func (yConvert) ToString(v interface{}) string {
 	if v == nil {
 		return ""
 	}
@@ -70,21 +46,21 @@ func ConvertAnyToStr(v interface{}) string {
 	}
 }
 
-// v1.0.0: 将任意类型转int
-func ConvertAnyToInt(v interface{}) int {
+// 将任意类型转int
+func (yConvert) ToInt(v interface{}) int {
 	if v == nil {
 		return 0
 	}
 	switch d := v.(type) {
 	case string:
 		val, err := strconv.Atoi(d)
-		_conf.log("conver", "ConvertAnyToInt", err)
+		_arc.log("Conver", "ToInt", err)
 		return val
 	case int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64:
 		return int(reflect.ValueOf(v).Int())
 	case []byte:
 		val, err := strconv.Atoi(string(d))
-		_conf.log("conver", "ConvertAnyToInt", err)
+		_arc.log("Conver", "ToInt", err)
 		return val
 	case float32, float64:
 		return int(reflect.ValueOf(v).Float())
@@ -103,8 +79,8 @@ func ConvertAnyToInt(v interface{}) int {
 	}
 }
 
-// v1.0.0: 将任意类型转interface
-func ConvertAnyToInterface(v interface{}) interface{} {
+// 将任意类型转interface
+func (yConvert) ToInterface(v interface{}) interface{} {
 	if v == nil {
 		return nil
 	}
