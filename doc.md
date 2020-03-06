@@ -1,11 +1,10 @@
 ## 文档
 
-##### Base64
+#### Base64
 
 - [v2.0.0] 字符串base64编码
 
 `yutil.Base64.Encode(data string) string`
-
 
 - [v2.0.0] 对象进行base64编码
 
@@ -19,7 +18,7 @@
 
 `yutil.Base64.Decode2Obj(data string,v interface{})`
 
-##### Md5
+#### Md5
 
 - [v2.0.0] md5加密
 
@@ -30,7 +29,7 @@
 `yutil.Md5.EncodeWithSalt(data, salt string) string`
 
 
-##### Sha1
+#### Sha1
 
 - [v2.0.0] sha1加密
 
@@ -40,7 +39,7 @@
 
 `yutil.Sha1.EncodeWithSalt(data, salt string) string`
 
-##### Json
+#### Json
 
 - [v2.0.0] 将对象转成json字符串
 
@@ -51,7 +50,7 @@
 `yutil.Json.Unmarshal(s string,v interface{})`
 
 
-##### Regexp
+#### Regexp
 
 - [v2.0.0] 正则切割字符串
 
@@ -65,7 +64,7 @@
 
 `yutil.Regexp.FindAll(s, pattern string) []string`
 
-##### File
+#### File
 
 - [v2.0.0] 判断文件是否存在
 
@@ -88,7 +87,7 @@
 `yutil.File.ReadLine(filePath string, f func(line string))`
 
 
-##### Time 
+#### Time 
 
 - [v2.0.0] 获取当前时间并格式化成 2006-01-02 15:04:05
 
@@ -111,21 +110,29 @@
 `yutil.Time.Interval(params ...interface{})`
 
 
-##### String 
+#### String 
 
 - [v2.0.0] 模板渲染
 
 `yutil.String.TemplateParse(tmpl string, v interface{}) string`
 
+- [v2.0.2] 字符串大驼峰
 
-##### Random 
+`yutil.String.BigCamelCase(s string) string`
+
+- [v2.0.2] 字符串小驼峰
+
+`yutil.String.LittleCamelCase(s string) string`
+
+
+#### Random 
 
 - [v2.0.0] 随机指定长度的字符串，(范围包含: 大小写数字下划线)
 
 `yutil.Random.String(length int) string`
 
 
-##### Ip
+#### Ip
 
 - [v2.0.0] 获取客户端Ip
 
@@ -136,7 +143,7 @@
 `yutil.Ip.Tolong(ipstr string) uint32`
 
 
-##### Runtime
+#### Runtime
 
 - [v2.0.0] 获取系统类型
 
@@ -147,7 +154,7 @@
 `yutil.Runtime.CurrentFuncInfo(skip int) (funcName string, fileName string, line int)`
 
 
-##### Convert
+#### Convert
 
 - [v2.0.0] 将任意切片转成[]interface{}
 
@@ -166,14 +173,14 @@
 `yutil.Convert.ToInterface(v interface{}) interface{}`
 
 
-##### Slice 
+#### Slice 
 
 - [v2.0.0] 切片洗牌
 
 `yutil.Slice.Shuffle(v interface{})`
 
 
-##### Other 
+#### Other 
 
 - [v2.0.0] 比较两个版本号: v1 > v2 => 1; v1 == v2 => 0; v1 < v2 => -1
 
