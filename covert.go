@@ -86,3 +86,23 @@ func (yConvert) ToInterface(v interface{}) interface{} {
 	}
 	return reflect.ValueOf(v).Interface()
 }
+
+// 将Int切片转成字符串切片
+func (yConvert) IntSliceToStrSlice(v []int) []string {
+	var arr []string
+	for _, v := range v {
+		arr = append(arr, strconv.Itoa(v))
+	}
+	return arr
+}
+
+// 将字符串切片转成int切片
+func (yConvert) StrSliceToIntSlice(v []string) []int {
+	var arr []int
+	for _, v := range v {
+		a, err := strconv.Atoi(v)
+		_arc.log("Conver", "StrSliceToIntSlice", err)
+		arr = append(arr, a)
+	}
+	return arr
+}

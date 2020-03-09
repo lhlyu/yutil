@@ -172,12 +172,23 @@
 
 `yutil.Convert.ToInterface(v interface{}) interface{}`
 
+- [v2.0.3] 将Int切片转成字符串切片
+
+`yutil.Convert.IntSliceToStrSlice(v []int) []string`
+
+- [v2.0.3] 将字符串切片转成int切片
+
+`yutil.Convert.StrSliceToIntSlice(v []string) []int`
 
 #### Slice 
 
 - [v2.0.0] 切片洗牌
 
 `yutil.Slice.Shuffle(v interface{})`
+
+- [v2.0.3] 切片去重,如果传入指针则直接操作指针,如果传入非指针则返回一个interface，可自行断言
+
+`yutil.Slice.Distinct(v interface{}) interface{}`
 
 
 #### Other 
